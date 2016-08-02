@@ -3,7 +3,7 @@
 
 CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o
  ../include/ORBextractor.h
- /home/liming/MySLAM/src/ORBextractor.cpp
+ /home/liming/VSLAM/src/ORBextractor.cpp
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Eigen2Support
  /usr/include/eigen3/Eigen/src/Core/Array.h
@@ -178,7 +178,7 @@ CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o
  /usr/local/include/opencv2/video/tracking.hpp
 CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o
  ../include/ORBmatcher.h
- /home/liming/MySLAM/src/ORBmatcher.cpp
+ /home/liming/VSLAM/src/ORBmatcher.cpp
  /usr/local/include/opencv2/core/core.hpp
  /usr/local/include/opencv2/core/mat.hpp
  /usr/local/include/opencv2/core/operations.hpp
@@ -190,7 +190,7 @@ CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o
  /usr/local/include/opencv2/flann/miniflann.hpp
 CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o
  ../include/PnPSolver.hpp
- /home/liming/MySLAM/src/PnPSolver.cpp
+ /home/liming/VSLAM/src/PnPSolver.cpp
  /usr/local/include/opencv2/calib3d/calib3d.hpp
  /usr/local/include/opencv2/contrib/contrib.hpp
  /usr/local/include/opencv2/contrib/openfabmap.hpp

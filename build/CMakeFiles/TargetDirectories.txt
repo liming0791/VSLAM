@@ -1,2 +1,2 @@
-/home/liming/MySLAM/build/CMakeFiles/ORB_SLAM2.dir
-/home/liming/MySLAM/build/CMakeFiles/test_orb_extractor.dir
+/home/liming/VSLAM/build/CMakeFiles/VSLAM.dir
+/home/liming/VSLAM/build/CMakeFiles/test_orb_extractor.dir

@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/liming/MySLAM
+CMAKE_SOURCE_DIR = /home/liming/VSLAM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/liming/MySLAM/build
+CMAKE_BINARY_DIR = /home/liming/VSLAM/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/MySLAM/build/CMakeFiles /home/liming/MySLAM/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles /home/liming/VSLAM/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/MySLAM/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -102,17 +102,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ORB_SLAM2
+# Target rules for targets named VSLAM
 
 # Build rule for target.
-ORB_SLAM2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ORB_SLAM2
-.PHONY : ORB_SLAM2
+VSLAM: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 VSLAM
+.PHONY : VSLAM
 
 # fast build rule for target.
-ORB_SLAM2/fast:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/build
-.PHONY : ORB_SLAM2/fast
+VSLAM/fast:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/build
+.PHONY : VSLAM/fast
 
 #=============================================================================
 # Target rules for targets named test_orb_extractor
@@ -132,7 +132,7 @@ src/ORBextractor.o: src/ORBextractor.cpp.o
 
 # target to build an object file
 src/ORBextractor.cpp.o:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/ORBextractor.cpp.o
 .PHONY : src/ORBextractor.cpp.o
 
 src/ORBextractor.i: src/ORBextractor.cpp.i
@@ -140,7 +140,7 @@ src/ORBextractor.i: src/ORBextractor.cpp.i
 
 # target to preprocess a source file
 src/ORBextractor.cpp.i:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.i
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/ORBextractor.cpp.i
 .PHONY : src/ORBextractor.cpp.i
 
 src/ORBextractor.s: src/ORBextractor.cpp.s
@@ -148,7 +148,7 @@ src/ORBextractor.s: src/ORBextractor.cpp.s
 
 # target to generate assembly for a file
 src/ORBextractor.cpp.s:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.s
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/ORBextractor.cpp.s
 .PHONY : src/ORBextractor.cpp.s
 
 src/ORBmatcher.o: src/ORBmatcher.cpp.o
@@ -156,7 +156,7 @@ src/ORBmatcher.o: src/ORBmatcher.cpp.o
 
 # target to build an object file
 src/ORBmatcher.cpp.o:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/ORBmatcher.cpp.o
 .PHONY : src/ORBmatcher.cpp.o
 
 src/ORBmatcher.i: src/ORBmatcher.cpp.i
@@ -164,7 +164,7 @@ src/ORBmatcher.i: src/ORBmatcher.cpp.i
 
 # target to preprocess a source file
 src/ORBmatcher.cpp.i:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.i
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/ORBmatcher.cpp.i
 .PHONY : src/ORBmatcher.cpp.i
 
 src/ORBmatcher.s: src/ORBmatcher.cpp.s
@@ -172,15 +172,39 @@ src/ORBmatcher.s: src/ORBmatcher.cpp.s
 
 # target to generate assembly for a file
 src/ORBmatcher.cpp.s:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.s
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/ORBmatcher.cpp.s
 .PHONY : src/ORBmatcher.cpp.s
+
+src/PCLView.o: src/PCLView.cpp.o
+.PHONY : src/PCLView.o
+
+# target to build an object file
+src/PCLView.cpp.o:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/PCLView.cpp.o
+.PHONY : src/PCLView.cpp.o
+
+src/PCLView.i: src/PCLView.cpp.i
+.PHONY : src/PCLView.i
+
+# target to preprocess a source file
+src/PCLView.cpp.i:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/PCLView.cpp.i
+.PHONY : src/PCLView.cpp.i
+
+src/PCLView.s: src/PCLView.cpp.s
+.PHONY : src/PCLView.s
+
+# target to generate assembly for a file
+src/PCLView.cpp.s:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/PCLView.cpp.s
+.PHONY : src/PCLView.cpp.s
 
 src/PnPSolver.o: src/PnPSolver.cpp.o
 .PHONY : src/PnPSolver.o
 
 # target to build an object file
 src/PnPSolver.cpp.o:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/PnPSolver.cpp.o
 .PHONY : src/PnPSolver.cpp.o
 
 src/PnPSolver.i: src/PnPSolver.cpp.i
@@ -188,7 +212,7 @@ src/PnPSolver.i: src/PnPSolver.cpp.i
 
 # target to preprocess a source file
 src/PnPSolver.cpp.i:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.i
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/PnPSolver.cpp.i
 .PHONY : src/PnPSolver.cpp.i
 
 src/PnPSolver.s: src/PnPSolver.cpp.s
@@ -196,7 +220,7 @@ src/PnPSolver.s: src/PnPSolver.cpp.s
 
 # target to generate assembly for a file
 src/PnPSolver.cpp.s:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.s
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/PnPSolver.cpp.s
 .PHONY : src/PnPSolver.cpp.s
 
 test/test_orb_extractor.o: test/test_orb_extractor.cpp.o
@@ -229,7 +253,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... ORB_SLAM2"
+	@echo "... VSLAM"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test_orb_extractor"
@@ -239,6 +263,9 @@ help:
 	@echo "... src/ORBmatcher.o"
 	@echo "... src/ORBmatcher.i"
 	@echo "... src/ORBmatcher.s"
+	@echo "... src/PCLView.o"
+	@echo "... src/PCLView.i"
+	@echo "... src/PCLView.s"
 	@echo "... src/PnPSolver.o"
 	@echo "... src/PnPSolver.i"
 	@echo "... src/PnPSolver.s"

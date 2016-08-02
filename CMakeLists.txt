@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(ORB_SLAM2)
+project(VSLAM)
 
 IF(NOT CMAKE_BUILD_TYPE)
     SET(CMAKE_BUILD_TYPE Release)
@@ -31,6 +31,9 @@ LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 find_package(OpenCV 2.4.9 REQUIRED)
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
+find_package(PCL REQUIRED)
+find_package(Boost REQUIRED)
+find_package(VTK REQUIRED)
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
@@ -38,6 +41,9 @@ ${PROJECT_SOURCE_DIR}/include
 ${EIGEN3_INCLUDE_DIR}
 ${OPENCV_INCLUDE_DIR}
 ${Pangolin_INCLUDE_DIRS}
+${PCL_INCLUDE_DIRS}
+${Boost_INCLUDE_DIRS}
+${VTK_INCLUDE_DIRS}
 )
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
@@ -46,12 +52,16 @@ add_library(${PROJECT_NAME} SHARED
 src/ORBextractor.cpp
 src/ORBmatcher.cpp
 src/PnPSolver.cpp
+src/PCLView.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}
 ${EIGEN3_LIBS}
 ${Pangolin_LIBRARIES}
+${PCL_LIBRARIES}
+${Boost_LIBRARIES}
+${VTK_LIBRARIES}
 )
 
 # Build tests

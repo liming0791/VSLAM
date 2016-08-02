@@ -4,9 +4,9 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/liming/MySLAM/src/ORBextractor.cpp" "/home/liming/MySLAM/build/CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o"
-  "/home/liming/MySLAM/src/ORBmatcher.cpp" "/home/liming/MySLAM/build/CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o"
-  "/home/liming/MySLAM/src/PnPSolver.cpp" "/home/liming/MySLAM/build/CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o"
+  "/home/liming/VSLAM/src/ORBextractor.cpp" "/home/liming/VSLAM/build/CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o"
+  "/home/liming/VSLAM/src/ORBmatcher.cpp" "/home/liming/VSLAM/build/CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o"
+  "/home/liming/VSLAM/src/PnPSolver.cpp" "/home/liming/VSLAM/build/CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

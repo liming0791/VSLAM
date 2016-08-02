@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/liming/MySLAM
+CMAKE_SOURCE_DIR = /home/liming/VSLAM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/liming/MySLAM/build
+CMAKE_BINARY_DIR = /home/liming/VSLAM/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ORB_SLAM2.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/ORB_SLAM2.dir/flags.make
 
 CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o: CMakeFiles/ORB_SLAM2.dir/flags.make
 CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o: ../src/ORBextractor.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/MySLAM/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/VSLAM/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o -c /home/liming/MySLAM/src/ORBextractor.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o -c /home/liming/VSLAM/src/ORBextractor.cpp
 
 CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/liming/MySLAM/src/ORBextractor.cpp > CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/liming/VSLAM/src/ORBextractor.cpp > CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.i
 
 CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/liming/MySLAM/src/ORBextractor.cpp -o CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/liming/VSLAM/src/ORBextractor.cpp -o CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.s
 
 CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o.requires:
 .PHONY : CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o.requires
@@ -77,17 +77,17 @@ CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cpp.o.provides.build: CMakeFiles/ORB_S
 
 CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o: CMakeFiles/ORB_SLAM2.dir/flags.make
 CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o: ../src/ORBmatcher.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/MySLAM/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/VSLAM/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o -c /home/liming/MySLAM/src/ORBmatcher.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o -c /home/liming/VSLAM/src/ORBmatcher.cpp
 
 CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/liming/MySLAM/src/ORBmatcher.cpp > CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/liming/VSLAM/src/ORBmatcher.cpp > CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.i
 
 CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/liming/MySLAM/src/ORBmatcher.cpp -o CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/liming/VSLAM/src/ORBmatcher.cpp -o CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.s
 
 CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o.requires:
 .PHONY : CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o.requires
@@ -100,17 +100,17 @@ CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cpp.o.provides.build: CMakeFiles/ORB_SLA
 
 CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o: CMakeFiles/ORB_SLAM2.dir/flags.make
 CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o: ../src/PnPSolver.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/MySLAM/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/VSLAM/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o -c /home/liming/MySLAM/src/PnPSolver.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o -c /home/liming/VSLAM/src/PnPSolver.cpp
 
 CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/liming/MySLAM/src/PnPSolver.cpp > CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/liming/VSLAM/src/PnPSolver.cpp > CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.i
 
 CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/liming/MySLAM/src/PnPSolver.cpp -o CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/liming/VSLAM/src/PnPSolver.cpp -o CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.s
 
 CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o.requires:
 .PHONY : CMakeFiles/ORB_SLAM2.dir/src/PnPSolver.cpp.o.requires
@@ -205,6 +205,6 @@ CMakeFiles/ORB_SLAM2.dir/clean:
 .PHONY : CMakeFiles/ORB_SLAM2.dir/clean
 
 CMakeFiles/ORB_SLAM2.dir/depend:
-	cd /home/liming/MySLAM/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/liming/MySLAM /home/liming/MySLAM /home/liming/MySLAM/build /home/liming/MySLAM/build /home/liming/MySLAM/build/CMakeFiles/ORB_SLAM2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/liming/VSLAM/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/liming/VSLAM /home/liming/VSLAM /home/liming/VSLAM/build /home/liming/VSLAM/build /home/liming/VSLAM/build/CMakeFiles/ORB_SLAM2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ORB_SLAM2.dir/depend
 

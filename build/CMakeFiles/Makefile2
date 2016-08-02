@@ -50,54 +50,54 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/liming/MySLAM
+CMAKE_SOURCE_DIR = /home/liming/VSLAM
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/liming/MySLAM/build
+CMAKE_BINARY_DIR = /home/liming/VSLAM/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/ORB_SLAM2.dir
+# Target rules for target CMakeFiles/VSLAM.dir
 
 # All Build rule for target.
-CMakeFiles/ORB_SLAM2.dir/all:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/depend
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/MySLAM/build/CMakeFiles  1 2 3
-	@echo "Built target ORB_SLAM2"
-.PHONY : CMakeFiles/ORB_SLAM2.dir/all
+CMakeFiles/VSLAM.dir/all:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/depend
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/VSLAM/build/CMakeFiles  1 2 3 4
+	@echo "Built target VSLAM"
+.PHONY : CMakeFiles/VSLAM.dir/all
 
 # Include target in all.
-all: CMakeFiles/ORB_SLAM2.dir/all
+all: CMakeFiles/VSLAM.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ORB_SLAM2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/MySLAM/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ORB_SLAM2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/MySLAM/build/CMakeFiles 0
-.PHONY : CMakeFiles/ORB_SLAM2.dir/rule
+CMakeFiles/VSLAM.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/VSLAM.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 0
+.PHONY : CMakeFiles/VSLAM.dir/rule
 
 # Convenience name for target.
-ORB_SLAM2: CMakeFiles/ORB_SLAM2.dir/rule
-.PHONY : ORB_SLAM2
+VSLAM: CMakeFiles/VSLAM.dir/rule
+.PHONY : VSLAM
 
 # clean rule for target.
-CMakeFiles/ORB_SLAM2.dir/clean:
-	$(MAKE) -f CMakeFiles/ORB_SLAM2.dir/build.make CMakeFiles/ORB_SLAM2.dir/clean
-.PHONY : CMakeFiles/ORB_SLAM2.dir/clean
+CMakeFiles/VSLAM.dir/clean:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/clean
+.PHONY : CMakeFiles/VSLAM.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/ORB_SLAM2.dir/clean
+clean: CMakeFiles/VSLAM.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/test_orb_extractor.dir
 
 # All Build rule for target.
-CMakeFiles/test_orb_extractor.dir/all: CMakeFiles/ORB_SLAM2.dir/all
+CMakeFiles/test_orb_extractor.dir/all: CMakeFiles/VSLAM.dir/all
 	$(MAKE) -f CMakeFiles/test_orb_extractor.dir/build.make CMakeFiles/test_orb_extractor.dir/depend
 	$(MAKE) -f CMakeFiles/test_orb_extractor.dir/build.make CMakeFiles/test_orb_extractor.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/MySLAM/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/VSLAM/build/CMakeFiles  5
 	@echo "Built target test_orb_extractor"
 .PHONY : CMakeFiles/test_orb_extractor.dir/all
 
@@ -107,9 +107,9 @@ all: CMakeFiles/test_orb_extractor.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_orb_extractor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/MySLAM/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_orb_extractor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/MySLAM/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_orb_extractor.dir/rule
 
 # Convenience name for target.

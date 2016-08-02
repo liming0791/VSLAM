@@ -11,6 +11,50 @@
 #include "ORBextractor.h"
 #include "ORBmatcher.h"
 #include "PnPSolver.hpp"
+#include "PCLView.hpp"
+
+std::string getImageType(cv::Mat &mat)
+{
+    int number = mat.type();
+    // find type
+    int imgTypeInt = number%8;
+    std::string imgTypeString;
+
+    switch (imgTypeInt)
+    {
+        case 0:
+            imgTypeString = "8U";
+            break;
+        case 1:
+            imgTypeString = "8S";
+            break;
+        case 2:
+            imgTypeString = "16U";
+            break;
+        case 3:
+            imgTypeString = "16S";
+            break;
+        case 4:
+            imgTypeString = "32S";
+            break;
+        case 5:
+            imgTypeString = "32F";
+            break;
+        case 6:
+            imgTypeString = "64F";
+            break;
+        default:
+            break;
+    }
+
+    // find channel
+    int channel = (number/8) + 1;
+
+    std::stringstream type;
+    type<<"CV_"<<imgTypeString<<"C"<<channel;
+
+    return type.str();
+}
 
 void drawLink(cv::Mat& img, cv::Point& p1, cv::Point& p2, cv::Scalar& color)
 {
@@ -53,14 +97,13 @@ void drawMatchResult(std::string win_name , cv::Mat& src, cv::Mat& des,
 
 }
 
-void getEssentialMat(cv::Mat &frame1, cv::Mat &frame2,std::vector<cv::KeyPoint*> &out1, std::vector<cv::KeyPoint*> &out2, cv::Mat &result)
+void getEssentialMat(cv::Mat &frame1, cv::Mat &frame2,std::vector<cv::KeyPoint*> &out1, std::vector<cv::KeyPoint*> &out2, cv::Mat &result, cv::Mat &inliers)
 {
     //calculate fundamentalmat and essentialmat
     PnPSolver solver;
     std::vector<cv::Point2f> ori_pt;
     std::vector<cv::Point2f> des_pt;
     cv::Mat fundamentalmat;
-    cv::Mat inliers;
     double fx= 616.662852;
     double fy= 618.719985;
     double cx= 323.667190;
@@ -80,8 +123,10 @@ void getEssentialMat(cv::Mat &frame1, cv::Mat &frame2,std::vector<cv::KeyPoint*>
     }
     printf("fundamentalmat:\n");
     solver.FindFundamentalMatRansac(ori_pt, des_pt, fundamentalmat, inliers);
+    std::cout << getImageType(fundamentalmat) << std::endl;
     printf("essentialmat:\n");
     solver.FindEssentialMat(fundamentalmat, cameraMatrix, result);
+    std::cout << getImageType(result) << std::endl;
 
     //show inliers
     drawMatchResult("inliers", frame1, frame2,out1, out2, inliers);
@@ -91,12 +136,17 @@ void getEssentialMat(cv::Mat &frame1, cv::Mat &frame2,std::vector<cv::KeyPoint*>
 void getRt(cv::Mat &essentialmat, std::vector<cv::Mat> &Rs, std::vector<cv::Mat> &ts)
 {
     cv::Mat u, vt, w;
-    double W[9] = {0, -1, 0, 1, 0, 0, 0, 0, 1};
+    double W[9] = 
+    {
+        0, -1, 0, 
+        1, 0, 0, 
+        0, 0, 1
+    };
     cv::Mat WMat(3, 3, CV_64FC1, W);
     cv::SVD::compute(essentialmat, w, u, vt);
 
     Rs.push_back(u * WMat * vt);
-    Rs.push_back(u * WMat.t() * vt.t());
+    Rs.push_back(u * WMat.t() * vt);
 
     ts.push_back(u.col(2));
     ts.push_back(-u.col(2));
@@ -107,6 +157,35 @@ void getRt(cv::Mat &essentialmat, std::vector<cv::Mat> &Rs, std::vector<cv::Mat>
     std::cout << "t1: " << std::endl << ts[0] << std::endl;
     std::cout << "t1: " << std::endl << ts[1] << std::endl;
     
+}
+
+
+
+void getPointsFromHomogeneous(cv::Mat &h, std::vector<cv::Point3f> &pts){
+
+    std::cout << h << std::endl << std::endl;
+
+    float* ptr0 = h.ptr<float>(0);    
+    float* ptr1 = h.ptr<float>(1);    
+    float* ptr2 = h.ptr<float>(2);    
+    float* ptr3 = h.ptr<float>(3);    
+
+    pts.clear();
+
+    float z = 0;
+    for(int i = 0; i< h.cols;i++){
+        z = ptr3[i];
+        pts.push_back(cv::Point3f(ptr0[i]/z, ptr1[i]/z, ptr2[i]/z));
+    }
+}
+
+bool Point3fRight(std::vector<cv::Point3f> &pt3f){
+    for(int i = 0, _end = pt3f.size(); i < _end; i++){
+        if(pt3f[i].z<0){
+            return false;
+        }
+    }
+    return true;
 }
 
 int main(int argc, char** argv )
@@ -154,11 +233,111 @@ int main(int argc, char** argv )
 
     //get essentialmat
     cv::Mat essentialmat;
-    getEssentialMat(frame1, frame2, out1, out2, essentialmat);
+    cv::Mat inliers;
+    getEssentialMat(frame1, frame2, out1, out2, essentialmat,inliers);
 
     //SVD the essentialmat
     std::vector<cv::Mat> Rs, ts;
     getRt(essentialmat, Rs, ts); 
+
+    //triangulate
+    cv::Mat p4s1, p4s2, p4s3, p4s4;
+    std::vector<cv::Point2f> f1_pt, f2_pt;
+    std::vector<cv::Point3f> pt_3ds1, pt_3ds2, pt_3ds3, pt_3ds4;
+    for(int i= 0 ,_end = inliers.rows; i < _end; i++){
+        if(inliers.data[i]){
+            f1_pt.push_back(out1[i]->pt);
+            f2_pt.push_back(out2[i]->pt);
+        }
+    }
+
+    double fx= 616.662852;
+    double fy= 618.719985;
+    double cx= 323.667190;
+    double cy= 236.399432;
+
+    double cameraArray[9] = 
+    {
+        fx, 0 , cx,
+        0,  fy, cy,
+        0,  0,  1
+    };
+    cv::Mat cameraMatrix(3, 3, CV_32FC1, cameraArray);
+
+    float projArray1[12] = 
+    {
+        1, 0, 0, 0,
+        0, 1, 0, 0,
+        0, 0, 1, 0
+    }; 
+    cv::Mat projMat1(3, 4, CV_32FC1, projArray1);
+    projMat1 = cameraMatrix * projMat1;
+    std::cout << projMat1 << std::endl <<std::endl;
+
+    cv::Mat projMat2_1(3,4,CV_32FC1), 
+        projMat2_2(3,4,CV_32FC1), 
+        projMat2_3(3,4,CV_32FC1), 
+        projMat2_4(3,4,CV_32FC1);
+
+    Rs[0].copyTo(projMat2_1(cv::Rect(0,0,3,3)));
+    ts[0].copyTo(projMat2_1(cv::Rect(3,0,1,3)));
+    std::cout << projMat2_1 << std::endl << std::endl;
+    projMat2_1 = cameraMatrix * projMat2_1;
+    std::cout << projMat2_1 << std::endl << std::endl;
+
+    Rs[0].copyTo(projMat2_2(cv::Rect(0,0,3,3)));
+    ts[1].copyTo(projMat2_2(cv::Rect(3,0,1,3)));
+    std::cout << projMat2_2 << std::endl << std::endl;
+    projMat2_2 = cameraMatrix * projMat2_2;
+    std::cout << projMat2_2 << std::endl << std::endl;
+
+    Rs[1].copyTo(projMat2_3(cv::Rect(0,0,3,3)));
+    ts[0].copyTo(projMat2_3(cv::Rect(3,0,1,3)));
+    std::cout << projMat2_3 << std::endl << std::endl;
+    projMat2_3 = cameraMatrix * projMat2_3;
+    std::cout << projMat2_3 << std::endl << std::endl;
+
+    Rs[1].copyTo(projMat2_4(cv::Rect(0,0,3,3)));
+    ts[1].copyTo(projMat2_4(cv::Rect(3,0,1,3)));
+    std::cout << projMat2_4 << std::endl << std::endl;
+    projMat2_4 = cameraMatrix * projMat2_4;
+    std::cout << projMat2_4 << std::endl << std::endl;
+
+    //std::cout << f1_ptMat.rows << std::endl;
+    //std::cout << f2_ptMat.rows << std::endl;
+
+    cv::triangulatePoints(projMat1, projMat2_1, f1_pt, f2_pt, p4s1);
+    cv::triangulatePoints(projMat1, projMat2_2, f1_pt, f2_pt, p4s2);
+    cv::triangulatePoints(projMat1, projMat2_3, f1_pt, f2_pt, p4s3);
+    cv::triangulatePoints(projMat1, projMat2_4, f1_pt, f2_pt, p4s4);
+
+    getPointsFromHomogeneous(p4s1, pt_3ds1);
+    getPointsFromHomogeneous(p4s2, pt_3ds2);
+    getPointsFromHomogeneous(p4s3, pt_3ds3);
+    getPointsFromHomogeneous(p4s4, pt_3ds4);
+
+    if(Point3fRight(pt_3ds1))
+        printf("pt_3ds1 valid\n");
+    else
+        printf("pt_3ds1 invalid\n");
+
+    if(Point3fRight(pt_3ds2))
+        printf("pt_3ds2 valid\n");
+    else
+        printf("pt_3ds2 invalid\n");
+
+    if(Point3fRight(pt_3ds3))
+        printf("pt_3ds3 valid\n");
+    else
+        printf("pt_3ds3 invalid\n");
+
+    if(Point3fRight(pt_3ds4))
+        printf("pt_3ds4 valid\n");
+    else
+        printf("pt_3ds4 invalid\n");
+
+    PCLView view;
+    view.showRGBPoints(frame1, f1_pt, pt_3ds1);
 
     //opencv feature extract
     cv::Ptr<cv::FeatureDetector> _detector;
@@ -218,12 +397,12 @@ int main(int argc, char** argv )
     }
 
     cv::Mat ocv_essentialmat;
-    getEssentialMat(frame1, frame2, ocv_out1, ocv_out2, ocv_essentialmat);
+    cv::Mat ocv_inliers;
+    getEssentialMat(frame1, frame2, ocv_out1, ocv_out2, ocv_essentialmat, ocv_inliers);
 
     //SVD essentialmat
     std::vector<cv::Mat> ocv_Rs, ocv_ts;
     getRt(ocv_essentialmat, ocv_Rs, ocv_ts);
     
-
     return 0;
 }
