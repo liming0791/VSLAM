@@ -385,20 +385,20 @@ void triangulate(std::vector<cv::Point2f> &f1_pt, std::vector<cv::Point2f> &f2_p
     //projMat2_4 = cameraMatrix * projMat2_4;
     //std::cout << projMat2_4 << std::endl << std::endl;
 
-    //cv::triangulatePoints(projMat1, projMat2_1, f1_pt, f2_pt, p4s1);
-    //cv::triangulatePoints(projMat1, projMat2_2, f1_pt, f2_pt, p4s2);
-    //cv::triangulatePoints(projMat1, projMat2_3, f1_pt, f2_pt, p4s3);
-    //cv::triangulatePoints(projMat1, projMat2_4, f1_pt, f2_pt, p4s4);
+    cv::triangulatePoints(cameraMatrix*projMat1, cameraMatrix*projMat2_[0], f1_pt, f2_pt, p4s1);
+    cv::triangulatePoints(cameraMatrix*projMat1, cameraMatrix*projMat2_[1], f1_pt, f2_pt, p4s2);
+    cv::triangulatePoints(cameraMatrix*projMat1, cameraMatrix*projMat2_[2], f1_pt, f2_pt, p4s3);
+    cv::triangulatePoints(cameraMatrix*projMat1, cameraMatrix*projMat2_[3], f1_pt, f2_pt, p4s4);
 
-    //getPointsFromHomogeneous(p4s1, pt_3ds1);
-    //getPointsFromHomogeneous(p4s2, pt_3ds2);
-    //getPointsFromHomogeneous(p4s3, pt_3ds3);
-    //getPointsFromHomogeneous(p4s4, pt_3ds4);
+    getPointsFromHomogeneous(p4s1, pt_3ds1);
+    getPointsFromHomogeneous(p4s2, pt_3ds2);
+    getPointsFromHomogeneous(p4s3, pt_3ds3);
+    getPointsFromHomogeneous(p4s4, pt_3ds4);
     
-    TriangulatePoints(f1_pt, f2_pt, cameraMatrix, projMat1, projMat2_[0], pt_3ds1);
-    TriangulatePoints(f1_pt, f2_pt, cameraMatrix, projMat1, projMat2_[1], pt_3ds2);
-    TriangulatePoints(f1_pt, f2_pt, cameraMatrix, projMat1, projMat2_[2], pt_3ds3);
-    TriangulatePoints(f1_pt, f2_pt, cameraMatrix, projMat1, projMat2_[3], pt_3ds4);
+    //TriangulatePoints(f1_pt, f2_pt, cameraMatrix, projMat1, projMat2_[0], pt_3ds1);
+    //TriangulatePoints(f1_pt, f2_pt, cameraMatrix, projMat1, projMat2_[1], pt_3ds2);
+    //TriangulatePoints(f1_pt, f2_pt, cameraMatrix, projMat1, projMat2_[2], pt_3ds3);
+    //TriangulatePoints(f1_pt, f2_pt, cameraMatrix, projMat1, projMat2_[3], pt_3ds4);
 
 
     std::vector< std::vector<cv::Point3f> > results;
