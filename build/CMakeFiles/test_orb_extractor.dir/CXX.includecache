@@ -71,6 +71,8 @@ opencv2/core/core.hpp
 /home/liming/VSLAM/test/opencv2/core/core.hpp
 opencv2/nonfree/nonfree.hpp
 /home/liming/VSLAM/test/opencv2/nonfree/nonfree.hpp
+Eigen/Dense
+/home/liming/VSLAM/test/Eigen/Dense
 ORBextractor.h
 /home/liming/VSLAM/test/ORBextractor.h
 ORBmatcher.h
