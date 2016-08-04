@@ -344,21 +344,22 @@ int main(int argc, char** argv )
     cout << "Rs0" << endl << rotationMatrixToEulerAngles(Rs[0]) << endl;
     cout << "Rs1" << endl << rotationMatrixToEulerAngles(Rs[1]) << endl;
 
-    //get matched inliers points
-    std::vector<cv::Point2f> f1_pt, f2_pt;
-    for(int i= 0 ,_end = inliers.rows; i < _end; i++){
-        if(inliers.data[i]){
-            f1_pt.push_back(out1[i]->pt);
-            f2_pt.push_back(out2[i]->pt);
-        }
-    }
+    ////get matched inliers points
+    //std::vector<cv::Point2f> f1_pt, f2_pt;
+    //for(int i= 0 ,_end = inliers.rows; i < _end; i++){
+    //    if(inliers.data[i]){
+    //        f1_pt.push_back(out1[i]->pt);
+    //        f2_pt.push_back(out2[i]->pt);
+    //    }
+    //}
+    //cout << "matched inliers points: " << f1_pt.size() << endl;
 
-    //triangulate
-    std::vector<cv::Point3f> pts_3d;
-    triangulate(f1_pt, f2_pt, Rs, ts, pts_3d);
-    
-    PCLView view;
-    view.showRGBPoints(frame1, f1_pt, pts_3d);
+    ////triangulate
+    //std::vector<cv::Point3f> pts_3d;
+    //triangulate(f1_pt, f2_pt, Rs, ts, pts_3d);
+    //
+    //PCLView view;
+    //view.showRGBPoints(frame1, f1_pt, pts_3d);
 
     ////////////////////////////////////////////////////////////
     //opencv feature extract
@@ -429,6 +430,20 @@ int main(int argc, char** argv )
     cout << "ocv_Rs0" << endl << rotationMatrixToEulerAngles(ocv_Rs[0]) << endl;
     cout << "ocv_Rs1" << endl << rotationMatrixToEulerAngles(ocv_Rs[1]) << endl;
 
+    ////get matched inliers points
+    //std::vector<cv::Point2f> ocv_f1_pt, ocv_f2_pt;
+    //for(int i= 0 ,_end = ocv_inliers.rows; i < _end; i++){
+    //    if(ocv_inliers.data[i]){
+    //        ocv_f1_pt.push_back(ocv_out1[i]->pt);
+    //        ocv_f2_pt.push_back(ocv_out2[i]->pt);
+    //    }
+    //}
+    //
+    ////triangulate
+    //std::vector<cv::Point3f> ocv_pts_3d;
+    //triangulate(ocv_f1_pt, ocv_f2_pt, ocv_Rs, ocv_ts, ocv_pts_3d);
+    //
+    //view.showRGBPoints(frame1, ocv_f1_pt, ocv_pts_3d);
 
     
     return 0;
