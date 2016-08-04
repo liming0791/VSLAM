@@ -53,6 +53,8 @@ src/ORBextractor.cpp
 src/ORBmatcher.cpp
 src/PnPSolver.cpp
 src/PCLView.cpp
+src/RotationTools.cpp
+src/Triangulation.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}

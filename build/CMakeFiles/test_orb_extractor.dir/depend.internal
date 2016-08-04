@@ -6,6 +6,8 @@ CMakeFiles/test_orb_extractor.dir/test/test_orb_extractor.cpp.o
  ../include/ORBmatcher.h
  ../include/PCLView.hpp
  ../include/PnPSolver.hpp
+ ../include/RotationTools.hpp
+ ../include/Triangulation.hpp
  /home/liming/VSLAM/test/test_orb_extractor.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core

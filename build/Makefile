@@ -223,6 +223,54 @@ src/PnPSolver.cpp.s:
 	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/PnPSolver.cpp.s
 .PHONY : src/PnPSolver.cpp.s
 
+src/RotationTools.o: src/RotationTools.cpp.o
+.PHONY : src/RotationTools.o
+
+# target to build an object file
+src/RotationTools.cpp.o:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/RotationTools.cpp.o
+.PHONY : src/RotationTools.cpp.o
+
+src/RotationTools.i: src/RotationTools.cpp.i
+.PHONY : src/RotationTools.i
+
+# target to preprocess a source file
+src/RotationTools.cpp.i:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/RotationTools.cpp.i
+.PHONY : src/RotationTools.cpp.i
+
+src/RotationTools.s: src/RotationTools.cpp.s
+.PHONY : src/RotationTools.s
+
+# target to generate assembly for a file
+src/RotationTools.cpp.s:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/RotationTools.cpp.s
+.PHONY : src/RotationTools.cpp.s
+
+src/Triangulation.o: src/Triangulation.cpp.o
+.PHONY : src/Triangulation.o
+
+# target to build an object file
+src/Triangulation.cpp.o:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/Triangulation.cpp.o
+.PHONY : src/Triangulation.cpp.o
+
+src/Triangulation.i: src/Triangulation.cpp.i
+.PHONY : src/Triangulation.i
+
+# target to preprocess a source file
+src/Triangulation.cpp.i:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/Triangulation.cpp.i
+.PHONY : src/Triangulation.cpp.i
+
+src/Triangulation.s: src/Triangulation.cpp.s
+.PHONY : src/Triangulation.s
+
+# target to generate assembly for a file
+src/Triangulation.cpp.s:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/Triangulation.cpp.s
+.PHONY : src/Triangulation.cpp.s
+
 test/test_orb_extractor.o: test/test_orb_extractor.cpp.o
 .PHONY : test/test_orb_extractor.o
 
@@ -269,6 +317,12 @@ help:
 	@echo "... src/PnPSolver.o"
 	@echo "... src/PnPSolver.i"
 	@echo "... src/PnPSolver.s"
+	@echo "... src/RotationTools.o"
+	@echo "... src/RotationTools.i"
+	@echo "... src/RotationTools.s"
+	@echo "... src/Triangulation.o"
+	@echo "... src/Triangulation.i"
+	@echo "... src/Triangulation.s"
 	@echo "... test/test_orb_extractor.o"
 	@echo "... test/test_orb_extractor.i"
 	@echo "... test/test_orb_extractor.s"

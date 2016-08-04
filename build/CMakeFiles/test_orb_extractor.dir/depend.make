@@ -5,6 +5,8 @@ CMakeFiles/test_orb_extractor.dir/test/test_orb_extractor.cpp.o: ../include/ORBe
 CMakeFiles/test_orb_extractor.dir/test/test_orb_extractor.cpp.o: ../include/ORBmatcher.h
 CMakeFiles/test_orb_extractor.dir/test/test_orb_extractor.cpp.o: ../include/PCLView.hpp
 CMakeFiles/test_orb_extractor.dir/test/test_orb_extractor.cpp.o: ../include/PnPSolver.hpp
+CMakeFiles/test_orb_extractor.dir/test/test_orb_extractor.cpp.o: ../include/RotationTools.hpp
+CMakeFiles/test_orb_extractor.dir/test/test_orb_extractor.cpp.o: ../include/Triangulation.hpp
 CMakeFiles/test_orb_extractor.dir/test/test_orb_extractor.cpp.o: ../test/test_orb_extractor.cpp
 CMakeFiles/test_orb_extractor.dir/test/test_orb_extractor.cpp.o: /usr/include/eigen3/Eigen/Cholesky
 CMakeFiles/test_orb_extractor.dir/test/test_orb_extractor.cpp.o: /usr/include/eigen3/Eigen/Core
