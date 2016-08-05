@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = /home/liming/VSLAM/build
 CMakeFiles/VSLAM.dir/all:
 	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/depend
 	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/VSLAM/build/CMakeFiles  1 2 3 4 5 6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/VSLAM/build/CMakeFiles  1 2 3 4 5 6 7 8
 	@echo "Built target VSLAM"
 .PHONY : CMakeFiles/VSLAM.dir/all
 
@@ -72,7 +72,7 @@ all: CMakeFiles/VSLAM.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/VSLAM.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/VSLAM.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 0
 .PHONY : CMakeFiles/VSLAM.dir/rule
@@ -97,7 +97,7 @@ clean: CMakeFiles/VSLAM.dir/clean
 CMakeFiles/test_orb_extractor.dir/all: CMakeFiles/VSLAM.dir/all
 	$(MAKE) -f CMakeFiles/test_orb_extractor.dir/build.make CMakeFiles/test_orb_extractor.dir/depend
 	$(MAKE) -f CMakeFiles/test_orb_extractor.dir/build.make CMakeFiles/test_orb_extractor.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/VSLAM/build/CMakeFiles  7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/liming/VSLAM/build/CMakeFiles  9
 	@echo "Built target test_orb_extractor"
 .PHONY : CMakeFiles/test_orb_extractor.dir/all
 
@@ -107,7 +107,7 @@ all: CMakeFiles/test_orb_extractor.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_orb_extractor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_orb_extractor.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/liming/VSLAM/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_orb_extractor.dir/rule

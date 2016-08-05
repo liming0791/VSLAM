@@ -43,8 +43,8 @@ int ORBmatcher::SearchByKeypointsInGrid(
         cv::Mat &descriptors1, 
         std::vector<cv::KeyPoint> &keypoints2, 
         cv::Mat &descriptors2,
-        std::vector<cv::KeyPoint*> &out1, 
-        std::vector<cv::KeyPoint*> &out2)
+        std::vector<int> &out1, 
+        std::vector<int> &out2)
 {
     //build grid
     int g_s = width/16.0;
@@ -100,8 +100,8 @@ int ORBmatcher::SearchByKeypointsInGrid(
             }
 
             if(min_dis<=ORBmatcher::TH_LOW && min_dis <= mfNNratio * sec_min_dis){
-                out1.push_back(&keypoints1[kp1_idx]);
-                out2.push_back(&keypoints2[index]);
+                out1.push_back(kp1_idx);
+                out2.push_back(index);
                 num_match++;
             }
         }

@@ -23,10 +23,10 @@ public:
             const cv::Mat &cameraMatrix,
             cv::Mat &rvec,
             cv::Mat &tvec);
-    void FindFundamentalMatRansac(std::vector<cv::Point2f> &pts1, 
+    static void FindFundamentalMatRansac(std::vector<cv::Point2f> &pts1, 
             std::vector<cv::Point2f> &pts2, 
             cv::Mat &result,
             cv::Mat &inliers);
-    void FindEssentialMat(cv::Mat &fundamentalMat, cv::Mat &cameraMatrix, cv::Mat &result);
+    static void FindEssentialMat(cv::Mat &fundamentalMat, cv::Mat &cameraMatrix, cv::Mat &result);
 
 };

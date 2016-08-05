@@ -51,8 +51,8 @@ public:
             cv::Mat &descriptors1, 
             std::vector<cv::KeyPoint> &keypoints2, 
             cv::Mat &descriptors2,
-            std::vector<cv::KeyPoint*> &out1, 
-            std::vector<cv::KeyPoint*> &out2);
+            std::vector<int> &out1, 
+            std::vector<int> &out2);
 
 
 public:

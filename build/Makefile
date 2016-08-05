@@ -127,6 +127,30 @@ test_orb_extractor/fast:
 	$(MAKE) -f CMakeFiles/test_orb_extractor.dir/build.make CMakeFiles/test_orb_extractor.dir/build
 .PHONY : test_orb_extractor/fast
 
+src/5point.o: src/5point.cpp.o
+.PHONY : src/5point.o
+
+# target to build an object file
+src/5point.cpp.o:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/5point.cpp.o
+.PHONY : src/5point.cpp.o
+
+src/5point.i: src/5point.cpp.i
+.PHONY : src/5point.i
+
+# target to preprocess a source file
+src/5point.cpp.i:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/5point.cpp.i
+.PHONY : src/5point.cpp.i
+
+src/5point.s: src/5point.cpp.s
+.PHONY : src/5point.s
+
+# target to generate assembly for a file
+src/5point.cpp.s:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/5point.cpp.s
+.PHONY : src/5point.cpp.s
+
 src/ORBextractor.o: src/ORBextractor.cpp.o
 .PHONY : src/ORBextractor.o
 
@@ -247,6 +271,30 @@ src/RotationTools.cpp.s:
 	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/RotationTools.cpp.s
 .PHONY : src/RotationTools.cpp.s
 
+src/Rpoly.o: src/Rpoly.cpp.o
+.PHONY : src/Rpoly.o
+
+# target to build an object file
+src/Rpoly.cpp.o:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/Rpoly.cpp.o
+.PHONY : src/Rpoly.cpp.o
+
+src/Rpoly.i: src/Rpoly.cpp.i
+.PHONY : src/Rpoly.i
+
+# target to preprocess a source file
+src/Rpoly.cpp.i:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/Rpoly.cpp.i
+.PHONY : src/Rpoly.cpp.i
+
+src/Rpoly.s: src/Rpoly.cpp.s
+.PHONY : src/Rpoly.s
+
+# target to generate assembly for a file
+src/Rpoly.cpp.s:
+	$(MAKE) -f CMakeFiles/VSLAM.dir/build.make CMakeFiles/VSLAM.dir/src/Rpoly.cpp.s
+.PHONY : src/Rpoly.cpp.s
+
 src/Triangulation.o: src/Triangulation.cpp.o
 .PHONY : src/Triangulation.o
 
@@ -305,6 +353,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test_orb_extractor"
+	@echo "... src/5point.o"
+	@echo "... src/5point.i"
+	@echo "... src/5point.s"
 	@echo "... src/ORBextractor.o"
 	@echo "... src/ORBextractor.i"
 	@echo "... src/ORBextractor.s"
@@ -320,6 +371,9 @@ help:
 	@echo "... src/RotationTools.o"
 	@echo "... src/RotationTools.i"
 	@echo "... src/RotationTools.s"
+	@echo "... src/Rpoly.o"
+	@echo "... src/Rpoly.i"
+	@echo "... src/Rpoly.s"
 	@echo "... src/Triangulation.o"
 	@echo "... src/Triangulation.i"
 	@echo "... src/Triangulation.s"

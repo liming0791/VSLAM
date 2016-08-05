@@ -38,6 +38,6 @@ void PnPSolver::FindFundamentalMatRansac(std::vector<cv::Point2f> &pts1,
         cv::Mat &result,
         cv::Mat &inliers)
 {
-    result = cv::findFundamentalMat(pts1, pts2, CV_FM_RANSAC, 3, 0.99, inliers); 
+    result = cv::findFundamentalMat(pts1, pts2, CV_FM_RANSAC, 1, 0.999, inliers); 
     std::cout << result << std::endl;
 }
